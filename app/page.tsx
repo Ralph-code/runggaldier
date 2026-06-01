@@ -1,65 +1,94 @@
-import Image from "next/image";
+import React from 'react';
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="min-h-screen bg-slate-900 text-slate-100 font-sans scroll-smooth">
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 backdrop-blur-md bg-slate-900/80 border-b border-slate-800">
+        <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+          <span className="text-xl font-bold tracking-wider text-teal-400 font-mono">RUNGGALDIER</span>
+          <div className="space-x-6 text-sm font-medium">
+            <a href="#about" className="hover:text-teal-400 transition-colors">About</a>
+            <a href="#projects" className="hover:text-teal-400 transition-colors">Projects</a>
+            <a href="#contact" className="hover:text-teal-400 transition-colors">Contact</a>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      </nav>
+
+      {/* Hero Section */}
+      <header id="about" className="max-w-5xl mx-auto px-6 py-24 md:py-36 flex flex-col justify-center">
+        <p className="text-teal-400 font-mono mb-3 text-sm tracking-widest animate-fade-in">WELCOME TO MY SPACE</p>
+        <h1 className="text-5xl md:text-7xl font-extrabold text-slate-50 tracking-tight mb-4">
+          Hi, I'm Runggaldier.
+        </h1>
+        <h2 className="text-4xl md:text-5xl font-bold text-slate-400 mb-6">
+          I shape digital experiences.
+        </h2>
+        <p className="max-w-xl text-slate-400 text-lg mb-8 leading-relaxed">
+          I am a frontend software engineer focusing on building highly responsive, performant, and accessible web applications using React, Next.js, and Tailwind CSS.
+        </p>
+        <div>
+          <a 
+            href="#projects" 
+            className="inline-block border-2 border-teal-400 text-teal-400 px-6 py-3 rounded font-medium hover:bg-teal-400/10 transition-all duration-300 transform hover:-translate-y-1"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+            Explore My Work
           </a>
         </div>
-      </main>
+      </header>
+
+      {/* Projects Section */}
+      <section id="projects" className="max-w-5xl mx-auto px-6 py-20 border-t border-slate-800">
+        <h2 className="text-3xl font-bold text-slate-100 mb-12 flex items-center">
+          <span className="text-teal-400 font-mono text-xl mr-2">01.</span> Selected Projects
+        </h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Card 1 */}
+          <div className="bg-slate-800/40 p-6 rounded-xl border border-slate-800 hover:border-teal-400/30 hover:bg-slate-800/60 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              <h3 className="text-xl font-bold text-slate-100 mb-2 group-hover:text-teal-400 transition-colors">Next.js Web Portal</h3>
+              <p className="text-slate-400 text-sm mb-4 leading-relaxed">
+                A highly optimized, server-side rendered application with dynamic routing and complex layout components.
+              </p>
+            </div>
+            <div className="flex gap-3 text-xs font-mono text-slate-400 pt-4">
+              <span className="bg-slate-900 px-2 py-1 rounded">Next.js</span>
+              <span className="bg-slate-900 px-2 py-1 rounded">Tailwind</span>
+              <span className="bg-slate-900 px-2 py-1 rounded">TypeScript</span>
+            </div>
+          </div>
+
+          {/* Card 2 */}
+          <div className="bg-slate-800/40 p-6 rounded-xl border border-slate-800 hover:border-teal-400/30 hover:bg-slate-800/60 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              <h3 className="text-xl font-bold text-slate-100 mb-2 group-hover:text-teal-400 transition-colors">Tailwind CSS Toolkit</h3>
+              <p className="text-slate-400 text-sm mb-4 leading-relaxed">
+                A custom-built aesthetic library featuring seamless dark-mode toggling, crisp typography, and reusable custom layouts.
+              </p>
+            </div>
+            <div className="flex gap-3 text-xs font-mono text-slate-400 pt-4">
+              <span className="bg-slate-900 px-2 py-1 rounded">React</span>
+              <span className="bg-slate-900 px-2 py-1 rounded">Tailwind</span>
+              <span className="bg-slate-900 px-2 py-1 rounded">ESLint</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer / Contact Section */}
+      <footer id="contact" className="max-w-5xl mx-auto px-6 py-16 text-center text-slate-500 border-t border-slate-800">
+        <h3 className="text-2xl font-bold text-slate-200 mb-4">Let's Connect</h3>
+        <p className="mb-6 max-w-sm mx-auto text-sm text-slate-400">
+          I'm currently looking for new opportunities. Drop an email if you want to collaborate!
+        </p>
+        <a 
+          href="mailto:your.email@example.com" 
+          className="text-teal-400 hover:underline font-mono text-sm block mb-12"
+        >
+          your.email@example.com
+        </a>
+        <p className="text-xs">© {new Date().getFullYear()} Runggaldier. Built from scratch.</p>
+      </footer>
     </div>
   );
 }
